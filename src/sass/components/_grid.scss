@@ -1,0 +1,168 @@
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+    padding-left: 10px;
+    padding-right: 10px;
+    // @include respond(s){
+    //     max-width: 80rem;
+    // }
+    // @include respond(m){
+    //     max-width: 114rem;
+    // }
+    // &__not-hidden{
+    //     overflow: visible;
+    // }
+    // &-fluid{
+    //     padding-right: 0px;
+    //     padding-left: 0px;
+    //     @include respond(m){
+    //         max-width: 130rem;
+    //     }
+    // }
+}
+
+
+// $columns: 12; // number of columns in the grid system
+.row{
+    display: flex !important;
+    // padding-right: 10px;
+    // padding-left: 10px; 
+   // align-items: center;
+    //flex-direction: column;
+    // @include respond(m) {
+       
+    //         flex-direction: row;
+    
+    // }
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.flex-dir{
+    
+    @include respond(m) {
+        &-row{
+            flex-direction: row;
+        }
+    }
+   
+}
+.col {
+
+ // background-color: pink;
+ // border-radius: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+  &__margin{
+    margin: 2rem;
+  }
+  &__border{
+    border-bottom: rgba($color: $black-color, $alpha: .3) .5px solid;
+ 
+  @include respond(m){
+
+    border-left: rgba($color: $black-color, $alpha: .3) .5px solid;
+    border-bottom:none;
+  }
+  }
+  &__no-padding-right{
+      padding-right: 0;
+    @include respond(m){
+        padding-right: 16px; 
+      }
+  }
+  &-no-sidePadding{
+    padding-right: 0;
+    padding-left: 0;
+  
+  }
+  &_full{
+    width: 100% !important;
+    border-bottom: rgba($color: $black-color, $alpha: .3) .5px solid;
+
+  }
+}
+$columns :100;
+@for $width from 1 through $columns {
+    .w-#{$width} {
+       width: 100%;
+       
+       padding-left: 10px;
+       padding-right: 10px;
+       @include respond(m){
+        width: $width#{'%'} ;
+
+       }
+     
+      }   
+  
+}
+.w__no-padding{
+    padding-left: 0;
+    padding-right: 0;
+ }
+$columns :12;
+@for $width from 1 through $columns {
+    .col-#{$width} {
+        flex-basis: 100%;
+        &__margin{
+            flex-basis: (100%)-4;   
+
+        }
+      }  
+    @include respond(s){
+
+        .col-#{$width} {
+            flex-basis: ($width / $columns * 100%)*2;
+
+            &__margin{
+                flex-basis: (($width / $columns * 100%)*2)-4;   
+
+            }
+            &__shop{
+                flex-basis: (($width / $columns * 100%)*2)-1;   
+            }
+          }  
+    }
+    @include respond(m){
+        .col-#{$width} {
+            flex-basis: $width / $columns * 100%;
+
+            &__margin{
+                flex-basis: (($width / $columns * 100%)-1)-4;   
+
+            }
+            &__shop{
+                flex-basis: ($width / $columns * 100%)-1;   
+            }
+          }  
+    }
+  
+}
+.col-.5{
+    width: 5%;
+}
+.col-2.5{
+  flex-basis: 20%;
+}
+.align-center{
+    align-items: center;
+}
+.align-start{
+    align-items: flex-start;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+.justify-around{
+    justify-content: space-around;
+}
+.flexColumn{
+    flex-direction: column;
+}
+.flex-1{
+    flex: 1;
+}

@@ -1,0 +1,103 @@
+
+.hero {
+	position: relative; 
+//	border-bottom: 1px solid #000;
+//overflow: hidden;
+	// transition:all .3s linear;
+	// background-size: 100%;
+
+// @include animate(animate-wave, 0.8s);
+  
+
+	&--small{
+		height: 20vh;
+	}
+    &__overlay{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba($color: #000000, $alpha: .3);
+    }
+	&__image {
+        display: block; 
+        width: 100%;
+        height: 100% ;
+	
+	}
+
+	&__content {
+	
+		position: absolute;
+		top: 51%;
+		left: 0;
+		width: 100%;
+		text-align: center;
+        transform: translateY(-50%);
+        
+        
+	
+	}
+
+	&__title {
+		font-weight: 100;
+		color: $black-color;
+		font-size: 50px;
+		margin-bottom: 1rem;
+
+		@include respond(m){
+			font-size: 70.78465px;
+
+		}
+	
+	
+		font-family: 'Taweel', sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+        // @include respond(s) {
+		// 	font-size: 4rem;
+		// }
+
+
+	}
+
+	&__subtitle {
+		font-weight: 100; 
+		color: $black-color;
+		font-size: 50px;
+		@include respond(m){
+			font-size: 70.78465px;
+
+		}
+ font-family: 'Taweel', sans-serif;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+      
+
+	}
+
+	&__description {
+		color: $second-color;
+		font-size: 21.622237px;
+		font-weight: 100;
+	
+		max-width: 800px;
+		margin-right: auto;
+		margin-left: auto;
+letter-spacing: 3.2px;
+		@mixin atSmall {
+			font-size: 1.875rem;
+		}
+	}
+}
+
+
+.countdown-rec{
+	background-color: $black-color;
+	padding: 10px;
+	width: 100%;
+	& img{
+		width:50%
+	}
+}

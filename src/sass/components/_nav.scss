@@ -1,0 +1,90 @@
+.nav {
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+   
+    padding: 20px ;
+    z-index: 1000;
+    min-width: 100%;
+
+    & .logo {
+        position: relative;
+        font-weight: 700;
+        color: $main-color;
+        text-emphasis: none;
+       
+        width: 15%;
+        height: auto; 
+
+        & img {
+          
+        }
+        & h1{
+            font-size: 2rem;
+display: inline;
+display: none;
+            text-indent: 99999;
+        }
+    }
+
+    &.scrolled {
+        padding: 8px 100px;
+        background-color: #fff;
+        box-shadow: $third-shadow;
+
+        & .logo {
+            opacity: 1;
+        }
+    }
+
+    & ul {
+        position: relative;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex: 1;
+
+        & li {
+            position: relative;
+            list-style: none;
+            cursor: pointer;
+
+            & a {
+                position: relative;
+                margin: 0 15px;
+                text-decoration: none;
+                color: $main-color;
+                letter-spacing: 2px;
+                font-weight: 500;
+                transition: .3s;
+                transition: hover .1s;
+
+                &:hover {
+                    color: $second-color;
+                }
+            }
+
+            &:not(:last-child) {
+                & a {
+
+                    margin: 0 15px;
+                }
+            }
+
+            & .active {
+                color: $second-color;
+
+            }
+        }
+    }
+}
+
+.logo {
+    position: relative;
+    font-weight: 700;
+    color: $main-color;
+    text-emphasis: none;
+   
+    width: 15%;
+    height: auto; 
+}

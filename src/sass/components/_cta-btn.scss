@@ -1,0 +1,76 @@
+.cta-btn {
+
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        padding: .4rem 2rem;
+        font-size: 21.622237px;
+        font-weight: 100;
+        display: inline-block;
+        border-radius: 30px;
+        transition: all .2s;
+        position: relative;
+        border: none;
+        letter-spacing: 3.2px;
+        margin: 30px auto;
+        font-family: "Careem", sans-serif;
+     
+        cursor: pointer;
+        backface-visibility: hidden;
+
+    }
+
+    &:hover {
+        box-shadow: $second-shadow;
+        transform: translateY(-1.2px);
+
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        /*when we click*/
+        transform: translateY(.5px);
+        /*in relation to link not hover*/
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, .1);
+    }
+
+    &--border {
+        border: 1.5px solid $main-color;
+        color: $second-color;
+        background-color: rgba($color: #FBFBFB, $alpha: .5);
+        position: relative;
+
+    }
+
+    &--filled {
+
+        background-color: $second-color;
+        color: $main-color;
+
+        position: relative;
+
+    }
+
+    &--small {
+        font-size: 1.2rem;
+    }
+
+    &--large {
+        font-size: 2rem;
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
+
+ 
+
+  
+
+
+}
+.arrow-dev{
+position: absolute;
+bottom:10%;
+left: 50%;
+}
