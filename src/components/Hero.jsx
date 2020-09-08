@@ -8,25 +8,25 @@ export default function Hero(props) {
     <div
       className={`hero App-page d`}
       style={{
-        background: `url(${process.env.PUBLIC_URL}/images/wave.svg) center no-repeat`,
+        background: `url(${process.env.PUBLIC_URL}/images/wave.svg)  no-repeat`,
 
         height: "100%",
         backgroundPosition: "bottom",
-        backgroundSize: "100%",
+        backgroundSize: "cover",
         backgroundColor: "#F1FF38",
       }}
     >
       {/* <div id="home" className={`hero `}></div> */}
     <Nav /> 
-     
+     {/* <img src={`${process.env.PUBLIC_URL}/images/wave.svg`} alt=""/> */}
       <div className="hero__content">
         <div className="conatiner">
-          <h1 className="hero__title">يمكننا تغيير المناخ.</h1>
+          <h1 className="hero__title title">يمكننا تغيير المناخ.</h1>
           <div className="countdown-rec">
           
-          <img  src={`${process.env.PUBLIC_URL}/images/logo-colored.svg`} alt=""/>
+          <img  src={`${process.env.PUBLIC_URL}/images/logo-colored-empty.svg`} alt=""/>
           </div>
-          <h2 className="hero__subtitle">من اجل مستقبل تووووحيف</h2>
+          <h2 className="hero__subtitle title">من اجل مستقبل تووووحيف</h2>
           {/* <p className="hero__description">
             Your Innovation and creative award.
           </p> */}
@@ -39,7 +39,7 @@ export default function Hero(props) {
           /> */}
         </div>
       </div>
-      <Modal />
+  {/* <Modal />  */}
 
     </div>
   );

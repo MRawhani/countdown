@@ -7,7 +7,7 @@ import ModalContent from "./components/ModalContent";
 export default function Main() {
       
   return (
-    <div className=" container-fluid">
+    <div className="container container-fluid">
       <Flip />
     <ModalContent />
       <div

@@ -3,35 +3,36 @@
     position: relative;
     height: 100%;
 
-    &::before {
-        content: "";
-        width: 50px;
-        height: 45px;
-        background-color: $main-color;
-        position: absolute;
-        z-index: 1;
-        top: 10%;
-        left: 0;
-    }
-
-    &::after {
-        content: "";
-        width: 70px;
-        height: 30px;
-        background-color: $main-color;
-        position: absolute;
-        z-index: 1;
-        bottom: -10px;
-        left: 0;
-    }
-
-
-    &__wrapper {
-        padding: 60px 70px;
+   
+    &__content {
         position: relative;
-        z-index: 1;
+      //   z-index: 2;
     }
-
+    &__trans{
+        padding: 0 20px;
+        & h1{
+            color: $black-color;
+        }
+        & p{
+           width: 70%;
+            
+            color: $black-color;
+          
+        }
+    }
+    &__black{
+        background-color: $black-color;
+        color: #fff;
+        padding: 20px;
+        & h1{
+            color: $main-color;
+            
+        }
+        & p{
+           width: 70%;
+            color: #fff;
+        }
+    }
     &__desc {
         position: relative;
 
@@ -86,4 +87,42 @@
             // transform: translate(-133px, -126px) scale(1.2);
         }
     }
+}
+.topic{
+    background-color: $black-color !important; 
+}
+.topics-img{
+    width: 40%;
+}
+.position-middle{
+    position: absolute;
+    top: 40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.topics__black{
+    position: relative;
+    background-color: $black-color;
+    // padding:20px 20px;
+    color: $main-color;
+    & img{
+      width: 120px;
+    }
+   
+   & h1{
+       font-size: 40px;
+   }
+}
+.topics__yellow{
+    background-color: $main-color;
+    // padding:50px 20px;
+    position: relative;
+    color: $black-color;
+    & img{
+      width: 120px;
+    }
+   
+   & h1{
+       font-size: 40px;
+   }
 }

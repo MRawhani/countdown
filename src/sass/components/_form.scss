@@ -11,17 +11,19 @@
         text-align: left;
     }
 
-    &__group:first-child {
+    &__block:first-child {
         //   margin-bottom: 2rem;
-        margin-top: 3rem;
+         margin-top: 3rem;
         // width: 90%;
         //   position: relative;
     }
 
     &__input {
-
+        
+        font-size: inherit;
+        line-height: inherit;
         padding: .5rem 1rem;
-        font-family: inherit;
+  font-family: 'Negar';
         position: relative;
         color: inherit;
         border-radius: 5px;
@@ -72,7 +74,11 @@
         display: block;
         transition: all .3s;
         //  line-height: 60px; 
-        transform: translateY(-4.5rem);
+        transform: translateY(-5.5rem);
+        &.big{
+            transform: translateY(-7.5rem);
+
+        }
 
     }
 
@@ -85,4 +91,23 @@
 
     }
 
+}
+form{
+    padding: 10px 7px;
+}
+.headLabel{
+    margin-bottom: 3.5rem;
+    font-size: 30px;
+}
+.subheadLable{
+    
+    font-size: 20px;
+    &.grey{
+        color: $grey;
+    }
+}
+.subLabel{
+    
+    font-size: 14px;
+    color: $grey;
 }

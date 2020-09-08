@@ -13,9 +13,9 @@ export default function Modal() {
   
   return (
     <div>
-      <button onClick={openModal} id="myBtn">
-        Open Modal
-      </button>
+  
+      <button onClick={openModal} id="myBtn" class="cta-btn cta-btn--filled ">قدم كمتحدثـ/ـة</button>
+
 
         </div>
   );

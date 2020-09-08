@@ -30,7 +30,7 @@
 	&__content {
 	
 		position: absolute;
-		top: 51%;
+		top: 50%;
 		left: 0;
 		width: 100%;
 		text-align: center;
@@ -43,13 +43,12 @@
 	&__title {
 		font-weight: 100;
 		color: $black-color;
-		font-size: 50px;
-		margin-bottom: 1rem;
+	
+	
+		// @include respond(m){
+		// 	font-size: 70.78465px;
 
-		@include respond(m){
-			font-size: 70.78465px;
-
-		}
+		// }
 	
 	
 		font-family: 'Taweel', sans-serif;
@@ -65,11 +64,15 @@
 	&__subtitle {
 		font-weight: 100; 
 		color: $black-color;
-		font-size: 50px;
-		@include respond(m){
-			font-size: 70.78465px;
+		// font-size: 40px;
+		// // @include respond(m){
+		// // 	font-size: 70.78465px;
 
-		}
+		// // }
+		// @include respond(s){
+		// 	font-size: 50.78465px;
+
+		// }
  font-family: 'Taweel', sans-serif;
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;

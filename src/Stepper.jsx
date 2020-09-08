@@ -1,90 +1,133 @@
 import React, { Component } from "react";
+import Step1Form from "./components/Form/Register/Step1Form";
+import Step2Form from "./components/Form/Register/Step2Form";
+import Step3Form from "./components/Form/Register/Step3Form";
+import Step4Form from "./components/Form/Register/Step4Form";
 
 export default class Stepper extends Component {
   constructor() {
     super();
     this.state = {
+      formData: {},
       steps: [
         {
           index: 0,
           number: "one",
           minimized: false,
+          finished: false,
+          title:'الخطوة الأولى',
+          subtitle:'معلومات عامة',
           content: (props) => (
-            <button
-              onClick={(e) => this.clickNext(e, props.id)}
+            <Step1Form
+              nextStep={(e, data) => this.clickNext(e, props.id, data)}
               class="next-btn"
-            >
-              Next
-            </button>
+            />
           ),
         },
         {
           index: 1,
           number: "two",
           minimized: true,
+          finished: false,
+          title:'الخطوة الثانية',
+          subtitle:'حدثنا عن نفسك',
           content: (props) => (
-            <button
-              onClick={(e) => this.clickNext(e, props.id)}
+            <Step2Form
+              nextStep={(e,data) => this.clickNext(e,props.id, data)}
               class="next-btn"
-            >
-              Next
-            </button>
+            />
           ),
         },
         {
           index: 2,
           number: "three",
           minimized: true,
+          finished: false,
+          title:'الخطوة الثالثة',
+          subtitle:'ماذا تعرف عن تيدكس',
           content: (props) => (
-            <button
-              onClick={(e) => this.clickNext(e, props.id)}
-              class="next-btn"
-            >
-              Next
-            </button>
+            <Step3Form
+            nextStep={(e,data) => this.clickNext(e,props.id, data)}
+            class="next-btn"
+          />
           ),
         },
         {
           index: 3,
           number: "four",
           minimized: true,
+          finished: false,
+          title:'الخطوة الرابعة',
+          subtitle:'حدثنا عن فكرتك',
           content: (props) => (
-            <button
-              onClick={(e) => this.clickClose(e, props.id)}
-              class="close-btn"
-            >
-              Close
-            </button>
-          ),
+            <Step4Form
+           
+            nextStep={(e,data) => this.clickClose(e, props.id, data)}
+
+            class="next-btn"
+          />
+              ),
         },
       ],
     };
   }
-  clickClose = (e, id) => {
+  scroll = (e, id) => {
+    e.preventDefault();
+    var elmnt = document.getElementById("mobile");
+    console.log(elmnt.step);
+    const { steps } = { ...this.state };
+    steps[id].minimized = true;
+   
+    this.setState({
+      steps: steps,
+    });
+    setTimeout(() => {
+      steps[elmnt.step - 1].minimized = false;
+    
+    this.setState({ steps: steps },()=>elmnt.scrollIntoView(true));
+   
+    }, 400);
+    
+  };
+  clickClose = (e, id,data) => {
     e.preventDefault();
     const { steps } = { ...this.state };
 
     steps[id].minimized = true;
-    this.setState({ steps: steps });
+    steps[id].finished = true;
+    const nwData = {...this.state.formData}
+    Object.assign(nwData,data)
+     this.setState({
+       steps: steps,
+       formData:   nwData,
+     });
   };
-  clickNext = (e, id) => {
+  clickNext = (e, id, data) => {
     e.preventDefault();
     const { steps } = { ...this.state };
     let cur = steps[id];
 
     steps[id].minimized = true;
-    this.setState({ steps: steps });
+    steps[id].finished = true;
+   const nwData = {...this.state.formData}
+   Object.assign(nwData,data)
+    this.setState({
+      steps: steps,
+      formData:   nwData,
+    });
     setTimeout(() => {
       steps[id + 1].minimized = false;
       this.setState({ steps: steps });
+      console.log(this.state.formData);
     }, 400);
   };
   clickStep = (e, id) => {
     e.preventDefault();
     const { steps } = { ...this.state };
-
-    steps[id].minimized = !steps[id].minimized;
-    this.setState({ steps: steps });
+    if (id===0||steps[id-1].finished) {
+      steps[id].minimized = !steps[id].minimized;
+      this.setState({ steps: steps });
+    }
   };
   componentDidMount() {}
   render() {
@@ -92,15 +135,19 @@ export default class Stepper extends Component {
       <div>
         <div class="steps">
           {this.state.steps.map((step, i) => (
-            <div class={`step ${step.minimized ? "minimized" : ""}`}>
+            <div
+              class={`step ${step.number} ${step.minimized ? "minimized" : ""}  ${
+                step.finished ? "finished" : ""
+              }`}
+            >
               <div
                 onClick={(e) => this.clickStep(e, step.index)}
-                class="step-header"
+                class={`step-header `}
               >
-                <div class="header">This is step two!</div>
-                <div class="subheader">The content is a little bigger!</div>
+                <div class="header">{step.title}</div>
+                <div class="subheader">{step.subtitle}</div>
               </div>
-              <div class="step-content two">
+              <div class={`step-content  ${step.number}`}>
                 <step.content id={step.index} />
               </div>
             </div>
@@ -111,7 +158,7 @@ export default class Stepper extends Component {
         <br />
         <br />
         <br />
-        <div class="container">
+        {/* <div class="container">
           <header class="header">
             <h1 id="title" class="text-center">
               freeCodeCamp Survey Form
@@ -358,6 +405,7 @@ export default class Stepper extends Component {
             </div>
           </form>
         </div>
+        */}
       </div>
     );
   }

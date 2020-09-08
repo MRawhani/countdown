@@ -30,22 +30,23 @@
   
   /* The Close Button */
   .close {
-    color: #aaa;
-    float: right;
+    color: $black-color;
+    
+    
     font-size: 28px;
     font-weight: bold;
   }
   
   .close:hover,
-  .close:focus {
-    color: black;
+  .close:focus { 
+    color: $main-color;
     text-decoration: none;
     cursor: pointer;
   }
   .modal-header {
     padding: 2px 16px;
    // background-color: #5cb85c;
-    color: white;
+    color: $black-color;
   }
   
   /* Modal Body */

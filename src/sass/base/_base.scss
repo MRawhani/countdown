@@ -36,17 +36,22 @@
 //     src: local("Fred"), url('../../assets/Fonts/FredokaOne-Regular.ttf') format('truetype');
 //     /* IE9 Compat Modes */
 // }
-
+.root{
+    overflow: hidden;
+}
 body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Careem', sans-serif;
+    font-family: 'Negar', sans-serif;
     overflow: hidden;
     direction: rtl;
 
 }
-
+img{
+    width: 100%;
+    vertical-align: middle;
+}
 // .container {
 //     overflow: hidden;
 //     max-width: 65rem;
