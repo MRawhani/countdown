@@ -8,6 +8,13 @@ export default function Nav(props) {
       className={`logo`}
     />
   );
+  const tedxImgWhite =(
+    <img
+      src={`${process.env.PUBLIC_URL}/images/TEDxSanaa_logo_white.svg`}
+      alt="tedxsanaa"
+      className={`logo`}
+    />
+  );
   const countImg =(
     <img
       src={`${process.env.PUBLIC_URL}/images/logo-colored-empty.svg`}
@@ -33,7 +40,7 @@ export default function Nav(props) {
             props.black ? "nav__black" : props.yellow ? "nav__yellow" : ""
           }  row justify-between align-center`}
         >
-          {countImg}
+          {tedxImgWhite}
           {countImg}
         </div>
       )}

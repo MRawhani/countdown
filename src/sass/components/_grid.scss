@@ -29,11 +29,18 @@
             padding-right: 50px;
             }
             &-right{
+                padding-right: 20px;
+                @include respond(m){
                 padding-right: 50px;
 
+                }
             }
             &-left{
+                padding-left: 20px;
+                @include respond(m){
                 padding-left: 50px;
+
+                }
 
             }
     }
@@ -193,4 +200,7 @@ $columns :12;
 }
 .flex-1{
     flex: 1;
+}
+.align-self-end{
+    align-self: flex-end;
 }

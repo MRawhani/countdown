@@ -4,7 +4,7 @@ import Main from './Main';
 import './sass/_main.scss'
 
 import ReactDOM from "react-dom";
-import "./index.css";
+
 
 import * as serviceWorker from "./serviceWorker";
 

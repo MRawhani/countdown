@@ -10,7 +10,7 @@ export default function Hero(props) {
       style={{
         background: `url(${process.env.PUBLIC_URL}/images/wave.svg)  no-repeat`,
 
-        height: "100%",
+        height: "100vh",
         backgroundPosition: "bottom",
         backgroundSize: "cover",
         backgroundColor: "#F1FF38",
